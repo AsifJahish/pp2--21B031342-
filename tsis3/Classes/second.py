@@ -19,9 +19,22 @@ class Square(Shape):
     def area(self):
         return self.length*self.length
 
-b=int(input("enter the length of the square   "))
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length=length
+        self.width=width
+    def area(self):
+        return self.length* self.width
 
-a=Square(b)
-a.__str__()
-print (a.area())
-        
+r=int(input("for sqaure enter 1 and for ractangle enter 2   "))
+if r==1:
+    b=int(input("enter the length of the square   "))
+    a=Square(b)
+    a.__str__()
+    print (a.area())
+elif r==2:
+    b=int(input("enter the length of the ractangle   "))
+    c=int(input("enter the width of of the rechtangle   "))
+    d=Rectangle(b,c)
+    b.__str__()
+    print (d.area())
