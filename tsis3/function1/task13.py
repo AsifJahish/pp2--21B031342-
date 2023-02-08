@@ -13,7 +13,7 @@ def play_game():
    
     while tries > 0:
 
-        guess = int(input("Take a guess   "))
+        guess = int(input("Take a guess "))
         guess_count+=1
         if guess == number:
             print(f"Good job, {name} ! You guessed my number in { guess_count}  guesses!")
