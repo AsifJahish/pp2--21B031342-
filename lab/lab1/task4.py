@@ -10,5 +10,5 @@ def word_count(S):
             word_counts[word] = 1
     return word_counts
 
-a=str(input("enter a string"))
+a=str(input("enter a string   "))
 print(word_count(a))

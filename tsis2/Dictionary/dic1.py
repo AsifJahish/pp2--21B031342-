@@ -34,6 +34,8 @@ thisdict = {
 if "model" in thisdict:
   print("Yes, 'model' is one of the keys in the thisdict dictionary")
 
+  #we change the value in the dict
+
 thisdict ["year"]= 1233
 
 print(thisdict)
