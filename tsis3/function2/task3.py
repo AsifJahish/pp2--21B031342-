@@ -79,10 +79,9 @@ movies = [
 }
 ]
 
-def ismore_5(movies):
-    if "imdb" in movies>5.5:
-        return True
-    return False
+def get_movies_by_category(movies, category):
+    return [movie for movie in movies if category in movie.get('category', [])]
 
-a=dict(name="We Two")
-print(ismore_5(a))
+
+action_movies = get_movies_by_category(movies, 'Action')
+print(action_movies)

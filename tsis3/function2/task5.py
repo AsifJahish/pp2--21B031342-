@@ -1,4 +1,6 @@
 
+
+
 # Dictionary of movies
 
 movies = [
@@ -78,11 +80,17 @@ movies = [
 "category": "Romance"
 }
 ]
+def avg_imdb_score_by_category(category, movies):
+    total_score = 0
+    count = 0
+    for movie in movies:
+        if "imdb" in movie and movie["category"] == category:
+            total_score += movie["imdb"]
+            count += 1
+    if count > 0:
+        return total_score / count
+    else:
+        return 0
 
-def ismore_5(movies):
-    if "imdb" in movies>5.5:
-        return True
-    return False
-
-a=dict(name="We Two")
-print(ismore_5(a))
+a=avg_imdb_score_by_category("Action", movies)
+print(a)

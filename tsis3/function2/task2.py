@@ -1,4 +1,5 @@
 
+
 # Dictionary of movies
 
 movies = [
@@ -79,10 +80,9 @@ movies = [
 }
 ]
 
-def ismore_5(movies):
-    if "imdb" in movies>5.5:
-        return True
-    return False
 
-a=dict(name="We Two")
-print(ismore_5(a))
+def get_highly_rated_movies(movies):
+         return [movie for movie in movies if movie.get('imdb', 0) > 5.5]
+
+a= get_highly_rated_movies(movies)
+print(a)

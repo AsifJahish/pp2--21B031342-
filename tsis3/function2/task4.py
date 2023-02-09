@@ -1,4 +1,6 @@
 
+
+
 # Dictionary of movies
 
 movies = [
@@ -79,10 +81,18 @@ movies = [
 }
 ]
 
-def ismore_5(movies):
-    if "imdb" in movies>5.5:
-        return True
-    return False
+def avg_imdb_score(movies):
+    total_score = 0
+    count = 0
+    for movie in movies:
+        if "imdb" in movie:
+            total_score += movie["imdb"]
+            count += 1
+    if count > 0:
+        return total_score / count
+    else:
+        return 0
 
-a=dict(name="We Two")
-print(ismore_5(a))
+a=avg_imdb_score(movies)
+
+print(f"the average of imdb in the dict is {a} ")
