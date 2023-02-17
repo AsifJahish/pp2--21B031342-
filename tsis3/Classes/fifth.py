@@ -10,6 +10,6 @@ def is_prime(number):
 
 numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-prime_numbers = list(filter(lambda x: is_prime(x), numbers))
+prime_numbers = list(filter(lambda x: (i for i in range()), numbers))
 
 print("Prime numbers in the list:", prime_numbers)

@@ -1,13 +1,12 @@
-
-# to print all the permutation of a string
-
+from itertools import permutations
 
 
+#Write a function that accepts string from user and print all permutations of that string.
 
-import itertools
 
-def permutations(string):
-    return list("".join(p) for p in itertools.permutations(string))
 
-s= str(input("enter the string you want     "))
-print(permutations(s))
+def all_permutations(string):
+    return [''.join(p) for p in permutations(string)]
+
+string = "abc"
+print(all_permutations(string))

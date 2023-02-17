@@ -1,5 +1,7 @@
 
 
+# Write a function that takes in a list of integers and returns True if it contains 007 in order
+
 def has_007(num):
     for i in range(len(num)-2):
     # we have to do len(num)-2 becuase when we say that i+2 it would go 2 more then the list length

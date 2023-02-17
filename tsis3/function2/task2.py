@@ -81,8 +81,13 @@ movies = [
 ]
 
 
-def get_highly_rated_movies(movies):
-         return [movie for movie in movies if movie.get('imdb', 0) > 5.5]
+def get_highly_rated_movies(movies):    
+        for movie in movies:
+            if movie['imdb'] > 5.5:
+                
+            if "imdb" in range(len(movie)) >5.5
+
+        #  return [movie for movie in movies if movie.get('imdb', 0) > 5.5]
 
 a= get_highly_rated_movies(movies)
 print(a)
