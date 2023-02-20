@@ -8,6 +8,6 @@ def degree_radian(n):
 
     return a
 
-degree = float(input("enter the degree you want"))
+degree = float(input("enter the degree you want   "))
 
 print(degree_radian(degree))
