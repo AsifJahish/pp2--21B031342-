@@ -10,6 +10,8 @@ def hasAFollowedbyB(theString):
     return match
 
 theString= str(input("enter the string   "))
+
+
 matched = hasAFollowedbyB(theString)
 if matched:
     print(matched.group())
