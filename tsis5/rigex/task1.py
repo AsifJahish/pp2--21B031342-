@@ -3,7 +3,7 @@ import re
 
 def hasAFollowedbyB(theString):
     
-    pattern= r"a(b*)"
+    pattern= r"a[b]*"
 
     match= re.match(pattern, theString)
 
