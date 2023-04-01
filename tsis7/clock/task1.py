@@ -5,12 +5,12 @@ pygame.init()
 screen = pygame.display.set_mode((400, 400))
 clock = pygame.time.Clock()
 
-clock_image = pygame.image.load('/home/asifjahish/Desktop/pp2-2022-21BD-main/lab 7/clock/clock.jpg')
+clock_image = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis7/clock/clock.jpg')
 clock_size= pygame.transform.scale(clock_image,(400,400))
 
-minute_image = pygame.image.load('/home/asifjahish/Desktop/pp2-2022-21BD-main/lab 7/clock/min.png')
+minute_image = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis7/clock/min.png')
 minute_size= pygame.transform.scale(minute_image,(100,100))
-second_image = pygame.image.load('/home/asifjahish/Desktop/pp2-2022-21BD-main/lab 7/clock/sec.png')
+second_image = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis7/clock/min.png')
 second_size= pygame.transform.scale(second_image,(100,100))
 
 def blitRotate(image, pos, angle,wh,hh):
