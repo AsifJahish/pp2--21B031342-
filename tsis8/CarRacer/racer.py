@@ -4,16 +4,19 @@ import random
 pygame.init()
 
 width, height = 500, 700
+CLOCK = pygame.time.Clock()
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("car racer")
+crash_sound = pygame.mixer.Sound('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/carcrush.mp3')
 
-back = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/AnimatedStreet.png')
+
+back = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/AnimatedStreet.png')
 back_size = pygame.transform.scale(back, (500, 700))
 
 class ComputerPlayer(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        redcar = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/Enemy.png')
+        redcar = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/Enemy.png')
         self.image = redcar
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(self.rect.width // 2, width - self.rect.width // 2), 0)
@@ -30,7 +33,7 @@ class ComputerPlayer(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        player = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/Player.png')
+        player = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/Player.png')
         self.image = player
         self.rect = self.image.get_rect()
         self.rect.center = (width // 2, height - self.rect.height // 2 - 20)
@@ -66,15 +69,16 @@ while running:
     
 
     if pygame.sprite.spritecollideany(player, computer_group):
+        crash_sound.play()
+
         running = False
     player.movement()
     computerPlayer.move()
 
     player_group.draw(screen)
     computer_group.draw(screen)
-
-   
-
+    pygame.display.update()
+    CLOCK.tick(100)
     pygame.display.flip()
 
 pygame.quit()
