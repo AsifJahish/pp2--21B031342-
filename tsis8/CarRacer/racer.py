@@ -7,7 +7,6 @@ width, height = 500, 700
 CLOCK = pygame.time.Clock()
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("car racer")
-crash_sound = pygame.mixer.Sound('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/carcrush.mp3')
 
 
 back = pygame.image.load('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/AnimatedStreet.png')
@@ -56,6 +55,8 @@ computerPlayer = ComputerPlayer()
 
 player_group = pygame.sprite.Group(player)
 computer_group = pygame.sprite.Group(computerPlayer)
+crash_sound = pygame.mixer.Sound('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/carcrush.mp3')
+sound = pygame.mixer.Sound('/home/asifjahish/vscode/pp2--21B031342-/tsis8/CarRacer/race-car.mp3')
 
 
 running = True
@@ -65,8 +66,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
-    
+    sound.play()
 
     if pygame.sprite.spritecollideany(player, computer_group):
         crash_sound.play()
