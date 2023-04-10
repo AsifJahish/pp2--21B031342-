@@ -1,11 +1,11 @@
 import pygame 
  
  
-WIDTH, HEIGHT = 1200, 800  
+WIDTH, HEIGHT = 700, 500  
 FPS = 120 
 draw = False            
 lastPos = (0, 0)        
-radius = 8            
+radius = 3            
 color = 'black'              
 mode = 'pen'                 
  
@@ -14,10 +14,10 @@ screen = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption('Paint') 
 clock = pygame.time.Clock() 
 screen.fill(pygame.Color('white')) 
-fontRadius = pygame.font.SysFont('Arial', 40, bold=True) 
+fontRadius = pygame.font.SysFont('Arial', 20, bold=True) 
 
 # (1000,200) till (1000, 500)
-Font = pygame.font.Font('freesansbold.ttf', 32)
+Font = pygame.font.Font('freesansbold.ttf', 15)
 
 def buttons_colors(screen, pos, color):
     pygame.draw.rect(screen, color, pos)
@@ -203,7 +203,7 @@ while True:
             
 
  
-        # Перемещение мышки 
+        
         if event.type == pygame.MOUSEMOTION:  
             if draw and mode == 'pen': 
                 drawLine(screen, lastPos, event.pos, radius, color) 
