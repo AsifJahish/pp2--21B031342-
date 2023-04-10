@@ -31,7 +31,7 @@ class Wall:
     self.load_wall()
   
   def load_wall(self):
-    with open(f'level1.txt', 'r') as f:
+    with open(f"/home/asifjahish/vscode/pp2--21B031342-/tsis9/snake/level1.txt", 'r') as f:
       wall_body = f.readlines()
     
     for i, line in enumerate(wall_body):
@@ -89,7 +89,7 @@ class Snake:
       color = RED if i == 0 else GREEN
       pygame.draw.rect(screen, color, (x * BLOCK_SIZE, y * BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE))
   
-  def collide_self(self):  # проверка столкновения с самим собой
+  def collide_self(self): 
         global running
         if self.body[0] in self.body[2:]:
           running = False
@@ -142,7 +142,7 @@ while running:
       # if event.key == pygame.K_SPACE:
       #   p
 
-  wallsCoor = open(f"level1.txt", 'r').readlines()
+  wallsCoor = open(f"/home/asifjahish/vscode/pp2--21B031342-/tsis9/snake/level1.txt", 'r').readlines()
   walls = []
   for i, line in enumerate(wallsCoor):
       for j, each in enumerate(line):
