@@ -22,14 +22,14 @@ SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 SPEED = 5
 SCORE = 0
-pygame.mixer.music.load('background.mp3')
+pygame.mixer.music.load('/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/lol.mp3')
 pygame.mixer.music.play(-1)
 #Setting up Fonts
 font = pygame.font.SysFont("Verdana", 60)
 font_small = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
 
-background = pygame.image.load("AnimatedStreet.png")
+background = pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/AnimatedStreet.png")
 
 #Create a white screen 
 screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
@@ -40,7 +40,7 @@ pygame.display.set_caption("RACER")
 class Enemy(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("Enemy.png")
+        self.image = pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/Enemy.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40,SCREEN_WIDTH-40), 0)
 
@@ -56,7 +56,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.transform.scale(pygame.image.load("Player1.png"), (100,110))
+        self.image = pygame.transform.scale(pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/Enemy.png"), (100,110))
         self.rect = self.image.get_rect()
         self.rect.center = (200, 500)
        
@@ -73,7 +73,7 @@ class Player(pygame.sprite.Sprite):
 class Coins (pygame.sprite.Sprite):
      def __init__ (self):
         super().__init__()
-        self.image = pygame.image.load("coins.png")
+        self.image = pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/coins.png")
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(20,SCREEN_WIDTH-20),random.randint(20,SCREEN_HEIGHT-20))   
 
@@ -126,7 +126,7 @@ while True:
     #To be run if collision occurs between Player and Enemy
     if pygame.sprite.spritecollideany(P1, enemies):
           pygame.mixer.music.stop()
-          pygame.mixer.music.load('crash.wav')
+          pygame.mixer.music.load('/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/crash.wav')
           pygame.mixer.music.play()
           time.sleep(1.5)           
           screen.fill(RED)
@@ -145,7 +145,7 @@ while True:
         
     # if pygame.sprite.spritecollideany(P1,C):4
     if pygame.sprite.spritecollideany(P1, coins):
-            pygame.mixer.Sound('coinss.mp3').play()
+            pygame.mixer.Sound('/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/coinss.mp3').play()
             SCORE += 1
             C.move()
                       
