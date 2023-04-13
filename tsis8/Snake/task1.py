@@ -3,7 +3,7 @@ import random
 
 pygame.init()
 
-WINDOW_WIDTH, WINDOW_HEIGHT = 500, 500
+WINDOW_WIDTH, WINDOW_HEIGHT = 400, 400
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))  # Surface
 running = True
 BLACK = (0, 0, 0)
@@ -14,7 +14,7 @@ GREEN = (0, 150, 0)
 RED = (150, 0, 0)
 time = 0
 
-BLOCK_SIZE = 15
+BLOCK_SIZE = 25
 
 clock = pygame.time.Clock()
 FPS = 6

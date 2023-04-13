@@ -1,19 +1,19 @@
 import pygame 
  
  
-WIDTH, HEIGHT = 1200, 800   # базовый размер окна 
+WIDTH, HEIGHT = 1200, 800  
 FPS = 120 
-draw = False                # нажатие, зажатие - рисуем, отжали - не рисуем  
-lastPos = (0, 0)            # базовая позиция  
-radius = 8            # базовый радиус для инструментов 
-color = 'black'              # базовый цвет 
-mode = 'pen'                # базовый режим 
+draw = False         
+lastPos = (0, 0)   
+radius = 8         
+color = 'Yellow'             
+mode = 'pen'                
  
 pygame.init() 
 screen = pygame.display.set_mode([WIDTH, HEIGHT]) 
 pygame.display.set_caption('Paint') 
 clock = pygame.time.Clock() 
-screen.fill(pygame.Color('white')) # закрашиваем в белый цвет, чтобы внутри цикла не обновлялось 
+screen.fill(pygame.Color('white')) 
 fontRadius = pygame.font.SysFont('Arial', 40, bold=True) 
 
 # (1000,200) till (1000, 500)
@@ -173,18 +173,16 @@ while True:
             if event.key == pygame.K_UP: 
                 radius = min(200, radius + 1)   # ограничение по максимальному размеру радиуса 
             if event.key == pygame.K_DOWN: 
-                radius = max(1, radius - 1)     # ограничение по минимальному размеру радиуса 
- 
-        # Нажатие на мышку 
+                radius = max(1, radius - 1)      
         if event.type == pygame.MOUSEBUTTONDOWN: 
             draw = True 
             if mode == 'pen': 
                 pygame.draw.circle(screen, pygame.Color(color), event.pos, radius) 
             prevPos = event.pos 
  
-        # Отпускание мышки 
+        
         if event.type == pygame.MOUSEBUTTONUP:  
-            # mouse_position = pygame.mouse.get_pos
+         
             if mode == 'rectangle': 
                 drawRectangle(screen, prevPos, event.pos, radius, color)
             elif mode == 'circle': 
@@ -197,13 +195,13 @@ while True:
                 drawEquilateralTriangle(screen, prevPos, event.pos, radius, color) 
             elif mode == 'rhombus': 
                 drawRhombus(screen, prevPos, event.pos, radius, color) 
-            # elif red.collidepoint(pygame.mouse.get_pos) == True:
-            #     color = (255,0,0)
+         
+         
             draw = False
             
 
  
-        # Перемещение мышки 
+    
         if event.type == pygame.MOUSEMOTION:  
             if draw and mode == 'pen': 
                 drawLine(screen, lastPos, event.pos, radius, color) 
@@ -211,7 +209,7 @@ while True:
                 drawLine(screen, lastPos, event.pos, radius, 'white') 
             lastPos = event.pos 
  
-    # show radius & color 
+     
     pygame.draw.rect(screen, pygame.Color(250,250,250), (5, 5, 400, 80)) 
     renderRadius = fontRadius.render(f'{radius}', True, pygame.Color(color)) 
     screen.blit(renderRadius, (5, 5)) 

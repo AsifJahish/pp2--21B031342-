@@ -12,12 +12,12 @@ def move_ball_game():
     pygame.display.set_caption("Move the Ball")
 
     # set up the ball
-    ball_radius = 25
+    ball_radius = 50
     ball_color = (255, 0, 0)
     ball_x = screen_width // 2
     ball_y = screen_height // 2
 
-    move_amount= 10
+    move_amount= 20
 
     # main game loop
     running = True
@@ -61,3 +61,26 @@ def move_ball_game():
 
 
 move_ball_game()
+
+
+"""
+In Pygame, the Clock object is used 
+to control the frame rate of a game or
+ application. It allows you to set a maximum 
+ frame rate, and then measures the time elapsed
+   between each frame.
+
+
+
+
+   In this code, event is a variable 
+   that is used to iterate 
+   through a list of all the
+     events that have occurred 
+     since the last time the event queue
+       was checked. The events are obtained
+         using the pygame.event.get() method, 
+         which returns a list of pygame.
+         event.Event objects.
+
+"""

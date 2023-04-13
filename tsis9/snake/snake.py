@@ -3,7 +3,7 @@ import random
 
 pygame.init()
 
-WINDOW_WIDTH, WINDOW_HEIGHT = 500, 500
+WINDOW_WIDTH, WINDOW_HEIGHT = 400, 400
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))  # Surface
 running = True
 BLACK = (0, 0, 0)
@@ -75,6 +75,7 @@ class Food:
     self.generate_random_pos()
   
   def draw(self):
+    clock.tick(1000)
     pygame.draw.rect(screen, BLUE, (self.x, self.y, BLOCK_SIZE, BLOCK_SIZE))
 
 
@@ -178,9 +179,9 @@ while running:
       FPS +=4
       level+=1
 
-  time += FPS % 4
+  time += FPS % 10
   # print(time)
-  if time % 100 == 0 and time != 0:
+  if time % 10 == 0 and time != 0:
     food.respawn()
 
 
@@ -189,8 +190,8 @@ while running:
   # font_l = pygame.font.SysFont("Verdana", 20)
   font_l = pygame.font.Font(None, 30)
   levell = font_l.render("LEVEL:"+str(level), True, (BLACK))
-  screen.blit(levell, (300,20))
-  screen.blit(text, (20, 20))
+  screen.blit(levell, (300,10))
+  screen.blit(text, (10, 10))
   
   pygame.display.update()
   clock.tick(FPS)

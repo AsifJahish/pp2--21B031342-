@@ -19,7 +19,7 @@ WHITE = (255, 255, 255)
 
 #Other Variables for use in the program
 SCREEN_WIDTH = 400
-SCREEN_HEIGHT = 600
+SCREEN_HEIGHT = 800
 SPEED = 5
 SCORE = 0
 pygame.mixer.music.load('/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/lol.mp3')
@@ -56,7 +56,7 @@ class Enemy(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.transform.scale(pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/Enemy.png"), (100,110))
+        self.image = pygame.transform.scale(pygame.image.load("/home/asifjahish/vscode/pp2--21B031342-/tsis9/racer/Enemy.png"), (50,100))
         self.rect = self.image.get_rect()
         self.rect.center = (200, 500)
        
