@@ -1,5 +1,6 @@
 import pygame 
- 
+import os
+
  
 WIDTH, HEIGHT = 1200, 800  
 FPS = 120 
@@ -173,12 +174,11 @@ while True:
             if event.key == pygame.K_UP: 
                 radius = min(200, radius + 1)   # ограничение по максимальному размеру радиуса 
             if event.key == pygame.K_DOWN: 
-                radius = max(1, radius - 1)      
-        if event.type == pygame.MOUSEBUTTONDOWN: 
-            draw = True 
-            if mode == 'pen': 
-                pygame.draw.circle(screen, pygame.Color(color), event.pos, radius) 
-            prevPos = event.pos 
+                radius = max(1, radius - 1) 
+
+
+ 
+  
  
         
         if event.type == pygame.MOUSEBUTTONUP:  
@@ -235,6 +235,8 @@ while True:
     elif mode == 'pen': 
         text = Font.render(mode, True, (0,0,0))
         screen.blit(text, (40,10))
+
+
 
 
     # display 
