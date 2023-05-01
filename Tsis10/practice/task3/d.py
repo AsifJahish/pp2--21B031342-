@@ -19,7 +19,7 @@ def export_data_to_csv(file_path):
     rows = cur.fetchall()
 
     # Export data to CSV file
-    with open('/home/asifjahish/vscode/.vscode/practice/task3/sheet2.csv', 'w', newline='') as csv_file:
+    with open('/home/asifjahish/vscode/pp2--21B031342-/Tsis10/practice/task3/sheet2.csv', 'w', newline='') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow(['doctor-name', 'name', 'joining_date', 'speciality', 'salary', 'experience'])
         writer.writerows(rows)

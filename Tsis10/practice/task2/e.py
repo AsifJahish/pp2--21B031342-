@@ -12,7 +12,7 @@ conn = psycopg2.connect(
 
 cur = conn.cursor()
 
-with open('/home/asifjahish/vscode/.vscode/practice/task2/Sheet1.csv', 'r') as file:
+with open('/home/asifjahish/vscode/pp2--21B031342-/Tsis10/practice/task2/Sheet1.csv', 'r') as file:
     reader = csv.reader(file)
     next(reader)  # Skip the header row
     for row in reader:
